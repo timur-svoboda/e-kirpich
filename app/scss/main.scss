@@ -1,0 +1,43 @@
+// ###################################################
+// Config
+// ###################################################
+
+// Libraries
+@import "../../node_modules/bootstrap/dist/css/bootstrap-reboot.min";
+
+// Variables
+$lightgray: #E5E5E5;
+
+%container {
+    width: 100%;
+    padding: 0 15px;
+    margin: 0 auto;
+
+    @media (min-width: 576px) {
+        width: 540px;
+    }
+
+    @media (min-width: 768px) {
+        width: 720px;
+    }
+
+    @media (min-width: 992px) {
+        width: 960px;
+    }
+
+    @media (min-width: 1200px) {
+        width: 1140px;
+    }
+}
+
+// ###################################################
+// Header
+// ###################################################
+.header {
+    padding: 20px 0;
+    border-bottom: 1px solid $lightgray;
+
+    &__wrap {
+        @extend %container;
+    }
+}

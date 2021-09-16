@@ -49,7 +49,7 @@ function scripts() {
         .pipe(bs.stream())
 }
 
-function imgMin() {
+export function imgMin() {
     const imgDest = 'public/img'
     return src('app/img/**/*')
         .pipe(newer(imgDest))
@@ -58,7 +58,7 @@ function imgMin() {
         .pipe(bs.stream())
 }
 
-function imgs2webp() {
+export function imgs2webp() {
     const imgsDest = 'public/img'
 
     return src('app/img/**/*')
@@ -71,10 +71,10 @@ function imgs2webp() {
         .pipe(bs.stream())
 }
 
-function fonts() {
+export function fonts() {
     const fontsDest = 'public/fonts'
     
-    return src('app/img/**/*')
+    return src('app/fonts/**/*')
         .pipe(newer({
             dest: fontsDest,
             ext: '.woff2'
@@ -94,7 +94,4 @@ export default function() {
     watch('app/**/*.pug', {ignoreInitial: false}, markup)
     watch('app/**/*.scss', {ignoreInitial: false}, styles)
     watch('app/**/*.js', {ignoreInitial: false}, scripts)
-    watch('app/img/**/*', {ignoreInitial: false}, imgMin)
-    watch('app/img/**/*', {ignoreInitial: false}, imgs2webp)
-    watch('app/fonts/**/*.ttf', {ignoreInitial: false}, fonts)
 }

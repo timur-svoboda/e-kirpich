@@ -27,6 +27,7 @@
     "sass": "^1.41.0"
   },
   "dependencies": {
+    "bootstrap": "^5.1.1",
     "jquery": "^3.6.0"
   }
 }
