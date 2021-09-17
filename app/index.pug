@@ -12,7 +12,8 @@ html(lang="en")
     header.header 
         .header__wrap
             .header__logo-wrap 
-                img.header__logo(src="img/logo.svg" alt="Логотип")
+                a.header__logo-link(href="#")
+                    img.header__logo(src="img/logo.svg" alt="Логотип")
     // Header -end
 
     // Top - start
@@ -51,6 +52,22 @@ html(lang="en")
                             p.benefits__item-desc #{item.desc}
         .benefits__separator
     // Benefits - end
+
+    // Why buy from us - start
+    include data/why-buy-from-us.pug
+
+    section.why-buy-from-us
+        .why-buy-from-us__wrap 
+            .why-buy-from-us__title Почему стоит покупать у нас
+            .why-buy-from-us__list 
+                each item, index in whyBuyFromUsData
+                    .why-buy-from-us__item 
+                        .why-buy-from-us__number-wrap 
+                            span.why-buy-from-us__number #{index+1}
+                        h3.why-buy-from-us__item-title #{item.title}
+                        p.why-buy-from-us__item-desc #{item.desc}
+        .why-buy-from-us__separator  
+    // Why buy from us - end
 
 
     script(src="js/scripts.min.js") 
