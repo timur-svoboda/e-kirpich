@@ -15,4 +15,42 @@ html(lang="en")
                 img.header__logo(src="img/logo.svg" alt="Логотип")
     // Header -end
 
+    // Top - start
+    include data/social.pug
+
+    section.top 
+        .top__wrap 
+            .top__text-button-social-wrap 
+                h1.top__title Теплая керамика от производителя
+                p.top__subtitle Для строительства вашей мечты
+                .top__button-social-wrap 
+                    button.top__button.button Заказать
+                    ul.top__social.social 
+                        each item in socialData
+                            li.social__item 
+                                a.social__link(href="#")!= item
+            .top__img-wrap
+                picture 
+                    source(srcset="img/brick.webp" type="image/webp")
+                    img.top__img(src="img/brick.png" alt="Кирпич")
+        .top__separator
+    // Top - end
+
+    // Benefits - start
+    include data/benefits.pug
+
+    section.benefits 
+        .benefits__wrap
+            h2.benefits__title Преимущетсва теплой керамики
+            .benefits__list
+                each item in benefitsData
+                    .benefits__item 
+                        img.benefits__item-icon(src="img/" + item.icon)
+                        .benefits__item-text
+                            h3.benefits__item-title #{item.title}
+                            p.benefits__item-desc #{item.desc}
+        .benefits__separator
+    // Benefits - end
+
+
     script(src="js/scripts.min.js") 
