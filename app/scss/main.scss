@@ -4,6 +4,7 @@
 
 // Libraries
 @import '../../node_modules/bootstrap/dist/css/bootstrap-reboot.min';
+@import '../../node_modules/aos/dist/aos';
 
 // Fonts
 @mixin font($fname, $fstyle, $fweight, $furl) {
@@ -107,7 +108,7 @@ body {
 }
 
 // ###################################################
-// Loadin
+// Loading
 // ###################################################
 .loading {
     &__bg {
@@ -480,6 +481,7 @@ body {
     &__list {
         display: grid;
         gap: 50px;
+        position: relative;
 
         @media (min-width: 992px) {
             grid-template: 1fr / 1fr 1fr;
@@ -488,6 +490,22 @@ body {
 
         @media (min-width: 1200px) {
             padding: 0 95px;
+        }
+
+        &::before {
+            content: "";
+            display: none;
+            height: 2px;
+            position: absolute;
+            top: 17px;
+            right: -10000px;
+            left: -10000px;
+            background-color: $accent;
+            z-index: -1;
+
+            @media (min-width: 992px) {
+                display: block;
+            }
         }
     }
 
@@ -531,7 +549,7 @@ body {
             z-index: -1;
 
             @media (min-width: 992px) {
-                right: -10000px;
+                display: none;
             }
         }
     }

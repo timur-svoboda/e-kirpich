@@ -30,18 +30,18 @@ html(lang="en")
     section.top 
         .top__wrap 
             .top__text-button-social-wrap 
-                h1.top__title Теплая керамика от производителя
-                p.top__subtitle Для строительства вашей мечты
+                h1.top__title(data-aos="fade-left" data-aos-delay="500") Теплая керамика от производителя
+                p.top__subtitle(data-aos="fade-left" data-aos-delay="550") Для строительства вашей мечты
                 .top__button-social-wrap 
-                    button.top__button.button Заказать
-                    ul.top__social.social 
+                    button.top__button.button(data-aos="fade-left" data-aos-delay="600") Заказать
+                    ul.top__social.social(data-aos="fade-left" data-aos-delay="650")
                         each item in socialData
                             li.social__item 
                                 a.social__link(href="#")!= item
             .top__img-wrap
                 picture
                     source(data-srcset="img/brick.webp" type="image/webp")
-                    img.top__img.lazyload(src="img/brick-placeholder.gif" data-src="img/brick.png" alt="Кирпич")
+                    img.top__img.lazyload(src="img/brick-placeholder.gif" data-src="img/brick.png" alt="Кирпич" data-aos="fade-up" data-aos-delay="650")
         .top__separator
     // Top - end
 
@@ -53,7 +53,7 @@ html(lang="en")
             h2.benefits__title Преимущетсва теплой керамики
             .benefits__list
                 each item in benefitsData
-                    .benefits__item 
+                    .benefits__item(data-aos="fade-up")
                         .benefits__item-icon-wrap
                             img.benefits__item-icon.lazyload(data-src="img/" + item.icon)
                         .benefits__item-text
@@ -70,11 +70,11 @@ html(lang="en")
             .why-buy-from-us__title Почему стоит покупать у нас
             .why-buy-from-us__list 
                 each item, index in whyBuyFromUsData
-                    .why-buy-from-us__item 
-                        .why-buy-from-us__number-wrap 
+                    .why-buy-from-us__item
+                        .why-buy-from-us__number-wrap(data-aos="fade-left" data-aos-delay=(200 * index)) 
                             span.why-buy-from-us__number #{index+1}
-                        h3.why-buy-from-us__item-title #{item.title}
-                        p.why-buy-from-us__item-desc #{item.desc}
+                        h3.why-buy-from-us__item-title(data-aos="fade-left" data-aos-delay=50 + (200 * index)) #{item.title}
+                        p.why-buy-from-us__item-desc(data-aos="fade-left" data-aos-delay=100 + (200 * index) data-aos-offset=110) #{item.desc}
         .why-buy-from-us__separator  
     // Why buy from us - end
 
@@ -82,12 +82,12 @@ html(lang="en")
     .cta 
         .cta__wrap 
             h2.cta__title Вы готовы сделать заказ?
-            p.cta__text 
+            p.cta__text(data-aos="fade-up")
                 span Скачать каталог можно 
                 a.cta__link здесь
-            p.cta__text Оставьте свои контактные данные, чтобы консультант связался с вами
-            button.cta__button.button Оставить контакты
-            p.cta__note Ожидайте звонка в течении часа после отправки данных
+            p.cta__text(data-aos="fade-up" data-aos-delay=50) Оставьте свои контактные данные, чтобы консультант связался с вами
+            button.cta__button.button(data-aos="fade-up" data-aos-delay=100) Оставить контакты
+            p.cta__note(data-aos="fade-up" data-aos-delay=150) Ожидайте звонка в течении часа после отправки данных
         .cta__separator
     // CTA - end
 
@@ -97,20 +97,20 @@ html(lang="en")
             .footer__contacts 
                 h2.footer__title Контакты
                 ul.footer__contact-list 
-                    li.footer__contact-item 
+                    li.footer__contact-item(data-aos="fade-left")
                         img.footer__contact-icon.lazyload(data-src="img/phone.svg" alt="Телефон") 
                         a.footer__contact-info(href="tel:+380935391990") 38(093)539-19-90
-                    li.footer__contact-item 
+                    li.footer__contact-item(data-aos="fade-left" data-aos-delay=50)
                         img.footer__contact-icon.lazyload(data-src="img/envelope.svg" alt="Конверт") 
                         a.footer__contact-info(href="mailto:e-kirpich@gmail.com") e-kirpich@gmail.com
-                    li.footer__contact-item 
+                    li.footer__contact-item(data-aos="fade-left" data-aos-delay=100)
                         img.footer__contact-icon.lazyload(data-src="img/map-pin.svg" alt="Указатель на карут") 
                         a.footer__contact-info ул. Коперника, 21, Киев
-                ul.footer__social.social
+                ul.footer__social.social(data-aos="fade-left" data-aos-delay=150 data-aos-offset=50)
                     each item in socialData
                         li.social__item.social__item--dark
                             a.social__link.social__link--dark(href="#")!= item
-            .footer__map-wrap 
+            .footer__map-wrap(data-aos="fade-up" data-aos-offset=200)
                 iframe.footer__map.lazyload(data-src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2540.1107837002687!2d30.477001414964462!3d50.45766169472747!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40d4ce7dd32bc549%3A0xada444fdc35732cc!2z0YPQuy4g0JrQvtC_0LXRgNC90LjQutCwLCAyMSwg0JrQuNC10LIsIDAyMDAw!5e0!3m2!1sru!2sua!4v1631898271047!5m2!1sru!2sua" style="border:0;" allowfullscreen="")
         .footer__separate-line 
         ul.footer__social.footer__social--bottom.social
