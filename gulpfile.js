@@ -41,6 +41,7 @@ function styles() {
 function scripts() {
     return src([
         'node_modules/jquery/dist/jquery.min.js',
+        'node_modules/lazysizes/lazysizes.min.js',
         'app/js/main.js'
     ])
         .pipe(concat('scripts.min.js'))

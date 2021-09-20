@@ -21,7 +21,7 @@ html(lang="en")
         .header__wrap
             .header__logo-wrap 
                 a.header__logo-link(href="#")
-                    img.header__logo(src="img/logo.svg" alt="Логотип")
+                    img.header__logo.lazyload(src="img/logo-placeholder.gif" data-src="img/logo.svg" alt="Логотип")
     // Header -end
 
     // Top - start
@@ -39,9 +39,9 @@ html(lang="en")
                             li.social__item 
                                 a.social__link(href="#")!= item
             .top__img-wrap
-                picture 
-                    source(srcset="img/brick.webp" type="image/webp")
-                    img.top__img(src="img/brick.png" alt="Кирпич")
+                picture
+                    source(data-srcset="img/brick.webp" type="image/webp")
+                    img.top__img.lazyload(src="img/brick-placeholder.gif" data-src="img/brick.png" alt="Кирпич")
         .top__separator
     // Top - end
 
@@ -54,7 +54,8 @@ html(lang="en")
             .benefits__list
                 each item in benefitsData
                     .benefits__item 
-                        img.benefits__item-icon(src="img/" + item.icon)
+                        .benefits__item-icon-wrap
+                            img.benefits__item-icon.lazyload(data-src="img/" + item.icon)
                         .benefits__item-text
                             h3.benefits__item-title #{item.title}
                             p.benefits__item-desc #{item.desc}
@@ -97,20 +98,20 @@ html(lang="en")
                 h2.footer__title Контакты
                 ul.footer__contact-list 
                     li.footer__contact-item 
-                        img.footer__contact-icon(src="img/phone.svg" alt="Телефон") 
+                        img.footer__contact-icon.lazyload(data-src="img/phone.svg" alt="Телефон") 
                         a.footer__contact-info(href="tel:+380935391990") 38(093)539-19-90
                     li.footer__contact-item 
-                        img.footer__contact-icon(src="img/envelope.svg" alt="Конверт") 
+                        img.footer__contact-icon.lazyload(data-src="img/envelope.svg" alt="Конверт") 
                         a.footer__contact-info(href="mailto:e-kirpich@gmail.com") e-kirpich@gmail.com
                     li.footer__contact-item 
-                        img.footer__contact-icon(src="img/map-pin.svg" alt="Указатель на карут") 
+                        img.footer__contact-icon.lazyload(data-src="img/map-pin.svg" alt="Указатель на карут") 
                         a.footer__contact-info ул. Коперника, 21, Киев
                 ul.footer__social.social
                     each item in socialData
                         li.social__item.social__item--dark
                             a.social__link.social__link--dark(href="#")!= item
             .footer__map-wrap 
-                iframe.footer__map(src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2540.1107837002687!2d30.477001414964462!3d50.45766169472747!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40d4ce7dd32bc549%3A0xada444fdc35732cc!2z0YPQuy4g0JrQvtC_0LXRgNC90LjQutCwLCAyMSwg0JrQuNC10LIsIDAyMDAw!5e0!3m2!1sru!2sua!4v1631898271047!5m2!1sru!2sua" width="800" height="600" style="border:0;" allowfullscreen="" loading="lazy")
+                iframe.footer__map.lazyload(data-src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2540.1107837002687!2d30.477001414964462!3d50.45766169472747!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40d4ce7dd32bc549%3A0xada444fdc35732cc!2z0YPQuy4g0JrQvtC_0LXRgNC90LjQutCwLCAyMSwg0JrQuNC10LIsIDAyMDAw!5e0!3m2!1sru!2sua!4v1631898271047!5m2!1sru!2sua" style="border:0;" allowfullscreen="")
         .footer__separate-line 
         ul.footer__social.footer__social--bottom.social
             each item in socialData
