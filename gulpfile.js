@@ -86,6 +86,15 @@ export function fonts() {
         .pipe(bs.stream())
 }
 
+export function build() {
+    markup();
+    styles();
+    scripts();
+    imgs2webp();
+    imgMin();
+    fonts();
+}
+
 export default function() {
     bs.init({
         server: {
