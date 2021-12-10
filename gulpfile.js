@@ -86,13 +86,14 @@ export function fonts() {
         .pipe(bs.stream())
 }
 
-export function build() {
+export function build(cb) {
     markup();
     styles();
     scripts();
     imgs2webp();
     imgMin();
     fonts();
+    cb();
 }
 
 export default function() {
