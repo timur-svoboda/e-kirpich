@@ -14,7 +14,6 @@ const uglify             = gulpUglifeEs.default
 
 import concat            from 'gulp-concat'
 import rename            from 'gulp-rename'
-import imagemin          from 'gulp-imagemin'
 import webp              from 'gulp-webp'
 import ttf2woff2         from 'gulp-ttf2woff2'
 import newer             from 'gulp-newer'
@@ -51,11 +50,10 @@ function scripts() {
         .pipe(bs.stream())
 }
 
-export function imgMin() {
+export function transferImages() {
     const imgDest = 'public/img'
     return src('app/img/**/*')
         .pipe(newer(imgDest))
-        .pipe(imagemin())
         .pipe(dest(imgDest))
         .pipe(bs.stream())
 }
@@ -90,8 +88,8 @@ export function build(cb) {
     markup();
     styles();
     scripts();
+    transferImages();
     imgs2webp();
-    imgMin();
     fonts();
     cb();
 }
